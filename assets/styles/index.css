@@ -183,3 +183,43 @@
     height: 100%;
   }
 }
+
+/* ============ DIFERENCIAL SECTION ============*/
+
+.diferencial {
+  background: var(--clr-bg-white);
+  padding-block: 11.2rem;
+}
+
+.diferencial .content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.diferencial .heading-box {
+  display: flex;
+  flex-direction: column;
+  max-width: 77rem;
+  margin-bottom: 8rem;
+}
+
+.heading-box h2 {
+  max-width: 60rem;
+  width: 100%;
+}
+
+.diferencial .heading-box .eyebrow {
+  margin-bottom: 1.6rem;
+}
+
+.diferencial .heading-box .h2 {
+  margin-bottom: 2.4rem;
+}
+
+.diferencial .cards {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+}
