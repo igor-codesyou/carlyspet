@@ -1,0 +1,216 @@
+@font-face {
+  font-family: "Bebas Neue";
+  src: url(../fonts/BebasNeue-Regular.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src: url(../fonts/Switzer-Regular.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src: url(../fonts/Switzer-Medium.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src: url(../fonts/Switzer-Semibold.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Switzer";
+  src: url(../fonts/Switzer-Bold.woff2) format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  /* Colors */
+  --clr-bg: hsl(30 36.4% 95.7%);
+  --clr-bg-blur: hsl(30 36.4% 95.7% / 0.1);
+  --clr-bg-white: hsl(0 0% 98%);
+  --clr-bg-accent: hsl(33 35.5% 93.9%);
+  --clr-dark: hsl(0 0% 14.1%);
+  --clr-text: hsla(0 0% 0% / 0.8);
+
+  /* Typography – Families */
+  --font-bebas: "Bebas Neue", "Arial Narrow", Impact, sans-serif;
+  --font-switzer: "Switzer", "Inter", "DM Sans", system-ui, sans-serif;
+  --font-gilda: "Gilda Display", Georgia, serif;
+
+  /* Typography – Switzer Weights */
+  --font-switzer-regular: 400 1em / 1.5 var(--font-switzer);
+  --font-switzer-medium: 500 1em / 1.5 var(--font-switzer);
+  --font-switzer-semibold: 600 1em / 1.5 var(--font-switzer);
+  --font-switzer-bold: 700 1em / 1.5 var(--font-switzer);
+
+  /* Typography – Scale */
+  --fs-h1: clamp(4rem, 1rem + 6.8vw, 8.4rem);
+  --fs-h2: clamp(3.6rem, 1rem + 2.2vw, 6rem);
+  --fs-h3: clamp(3.2rem, 1rem + 1.8vw, 4.8rem);
+  --fs-h4: clamp(2.4rem, 1rem + 1.4vw, 4rem);
+  --fs-h5: 1.6rem;
+  --fs-card: clamp(1.8rem, 1.8vw, 2.6rem);
+  --fs-body: clamp(1.6rem, 1.4vw, 2rem);
+  --fs-nav: 1.6rem;
+  --fs-footer: clamp(1.4rem, 1.1vw, 1.6rem);
+
+  /* Layout */
+  --width-max: 144rem;
+  --height-nav: 8rem;
+
+  /* Effects */
+  --shadow-card: 0 2px 8px hsl(0 0% 0% / 0.2);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--clr-dark);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-bg-white);
+  border-radius: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--font-switzer);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-gilda);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+h2 {
+  font-size: var(--fs-h2);
+}
+h3 {
+  font-size: var(--fs-h3);
+}
+h4 {
+  font-size: var(--fs-h4);
+}
+h5 {
+  font-size: var(--fs-h5);
+}
+
+p {
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  text-wrap: balance;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--width-max);
+  margin: 0 auto;
+  padding-inline: 1.6rem;
+}
+
+.eyebrow {
+  font-size: var(--fs-h5);
+  text-transform: capitalize;
+}
+
+.main-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  color: var(--clr-bg-white);
+  background: var(--clr-dark);
+  border: 2px solid var(--clr-dark);
+  border-radius: 8px;
+  transition: background 0.4s ease;
+  box-shadow: var(--shadow-card);
+  font-size: var(--fs-nav);
+  width: fit-content;
+}
+
+.main-button:hover {
+  background: #191919;
+}
+
+.outlined-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: var(--clr-dark);
+  border-width: 1.5px 1.5px 4px 1.5px;
+  border-color: hsla(0 0% 14.1% / 0.15);
+  border-style: solid;
+  border-radius: 8px;
+  transition: background 0.4s ease;
+  font-size: var(--fs-nav);
+  width: fit-content;
+}
+
+.outlined-button:hover {
+  background: #f2f2f2;
+}
